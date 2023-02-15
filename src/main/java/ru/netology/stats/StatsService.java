@@ -45,7 +45,6 @@ public class StatsService {
 
     public int calcMonthMoreAverage(int[] sales) {
         int average = averageSales(sales);
-        // int sum = 0;
         int monthMoreAverage = 0;
         int month = 0;
         for (int sale : sales) {
