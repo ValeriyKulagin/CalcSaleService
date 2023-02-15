@@ -12,9 +12,8 @@ public class StatsService {
 
     public int averageSales(int[] sales) {
         int average = 0;
-        int sum = 0;
+        int sum = allSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
             average = sum / sales.length;
         }
         return average;
@@ -45,14 +44,10 @@ public class StatsService {
     }
 
     public int calcMonthMoreAverage(int[] sales) {
-        int average = 0;
-        int sum = 0;
+        int average = averageSales(sales);
+        // int sum = 0;
         int monthMoreAverage = 0;
         int month = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
-            average = sum / sales.length;
-        }
         for (int sale : sales) {
             if (sale > average) {
                 month = month + 1;
@@ -65,14 +60,9 @@ public class StatsService {
     }
 
     public int calcMonthLessAverage(int [] sales) {
-        int average = 0;
-        int sum = 0;
+        int average = averageSales(sales);
         int monthLessAverage = 0;
         int month = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
-            average = sum / sales.length;
-        }
         for (int sale : sales) {
             if (sale < average) {
                 month = month + 1;
